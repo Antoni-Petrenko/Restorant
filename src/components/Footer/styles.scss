@@ -1,0 +1,58 @@
+@import "../../UI/ScssVars.scss";
+
+.Footer {
+  @include baseSectionProperties;
+  display: flex;
+  flex-direction: column;
+  background-color: $main-color;
+  &__heading {
+    width: 100%;
+  }
+  &__section {
+    flex: 1;
+  }
+  &__social-items {
+    a {
+      font-size: 5rem;
+      color: black;
+    }
+  }
+  &__section {
+    &-heading {
+      font-size: 3rem;
+      padding: 2rem 0;
+    }
+    &-items {
+      font-size: 2rem;
+      padding: 1rem 0;
+      a {
+        color: black;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px) and (orientation: landscape) {
+  .Footer {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    &__heading {
+      width: 100%;
+    }
+    &__section {
+      flex: 1;
+    }
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .Footer {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .Footer {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../UI/ScssVars.scss";
+.monogram-and {
+  position: relative;
+  min-height: 3rem;
+  padding: 3rem 0;
+  display: inline-block;
+  width: 100%;
+  &::after {
+    @include centerPosition;
+    content: " ";
+    width: 200px;
+    height: 2px;
+    background-color: black;
+    z-index: 0;
+  }
+  &__symbol {
+    @include centerPosition;
+    font-family: "Playfair Display", serif;
+    font-weight: normal;
+    font-size: 3rem;
+    padding: 0 1rem;
+    background-color: white;
+    z-index: 1;
+  }
+}

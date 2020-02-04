@@ -1,0 +1,62 @@
+@import "../../UI/ScssVars.scss";
+.menu-navigation {
+  display: flex;
+  justify-content: space-around;
+  &__button {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    padding: 2rem 0;
+    width: 100%;
+    transition: 0.3s;
+    &.active {
+      background-color: $main-color;
+    }
+  }
+}
+.menu {
+  &__size {
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    &--content {
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+    }
+    &--price {
+      font-size: 2rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      min-width: 10rem;
+      text-align: center;
+      span {
+        
+      }
+    }
+  }
+}
+
+
+

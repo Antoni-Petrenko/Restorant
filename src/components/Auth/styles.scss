@@ -1,0 +1,40 @@
+@import "../../UI/ScssVars.scss";
+
+.LogIn {
+  @include centerPosition;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-family: "Montserrat", sans-serif;
+    label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 2rem;
+      padding: 2rem 2rem;
+      span {
+        margin-right: 2rem;
+      }
+      input {
+          font-size: inherit;
+        border: none;
+        border-bottom: 1px solid $main-color;
+        &:focus{
+            outline: none;
+        }
+        
+      }
+    }
+    &--button{
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        &:disabled{
+          color: rgba(0, 0, 0, 0.2);
+          cursor: progress;
+        }
+    }
+  }
+}
