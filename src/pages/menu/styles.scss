@@ -1,32 +1,3 @@
-@import "../../UI/ScssVars.scss";
-.qestion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  @include centerPosition;
-  &-enter {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-
-    &-active {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-      transition: 0.3s ease-in-out;
-    }
-  }
-
-  &-exit {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    &-active {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.8);
-      transition: 0.3s ease-in-out;
-    }
-  }
-}
-
 .menu-main {
   position: relative;
 }

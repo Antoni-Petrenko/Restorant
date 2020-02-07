@@ -6,7 +6,7 @@ const Loader = () => {
     
       <div className="loadingio-eclipse">
         <div className="ldio-rpinwye8j0b">
-          <div></div>
+           <div></div>
         </div>
       </div>
   );

@@ -16,6 +16,9 @@
   }
 }
 .menu {
+  &__button--back{
+    @include button
+  }
   &__size {
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;

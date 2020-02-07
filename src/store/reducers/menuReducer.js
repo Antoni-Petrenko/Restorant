@@ -1,12 +1,13 @@
 import {
   FETCH_MENU_BEGIN,
-  FETCH_MENU_SUCCESS,
-  FETCH_MENU_FAILURE,
+  FETCH_PIZZA_SUCCESS,
+  FETCH_DRINKS_SUCCESS,
+  FETCH_MENU_FAILURE
 } from "../actions/actionMenu";
 
 const initState = {
   pizza: {},
-  drinks: [],
+  drinks: {drinks:{}},
   error: "",
   isLoad: false
 };
@@ -14,22 +15,28 @@ const initState = {
 export default function menu(state = initState, action) {
   switch (action.type) {
     case FETCH_MENU_BEGIN:
-      return{
+      return {
         ...state,
-        isLoad:false
-      }
-    case FETCH_MENU_SUCCESS:
-      return{
-        pizza:action.payload.pizza,
-        drinks:action.payload.drinks.drinks,
-        isLoad:true
-      }  
+        isLoad: false
+      };
+    case FETCH_PIZZA_SUCCESS:
+      return {
+        ...state,
+        pizza: action.payload,
+        isLoad: true
+      };
+    case FETCH_DRINKS_SUCCESS:
+      return {
+        ...state,
+        drinks: action.payload.drinks,
+        isLoad: true
+      };
     case FETCH_MENU_FAILURE:
-      return{
+      return {
         ...state,
-        isLoad:false,
-        error:action.payload
-      }  
+        isLoad: false,
+        error: action.payload
+      };
     default:
       return { ...state };
   }

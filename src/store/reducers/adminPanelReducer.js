@@ -6,7 +6,9 @@ const initState = {
   user: {},
   isLoad: true,
   pageContent: {},
-  menuContent: {}
+  drinksMenu: {},
+  regularPizzaMenu: {},
+  glutenfreePizzaMenu: {}
 };
 export default function admin(state = initState, action) {
   switch (action.type) {
@@ -19,6 +21,7 @@ export default function admin(state = initState, action) {
       };
     case actionTypes.SIGN_IN_SUCCESS:
       return {
+        ...state,
         user: { ...action.payload.user },
         isSignIn: true,
         error: "",
@@ -31,21 +34,34 @@ export default function admin(state = initState, action) {
         isSignIn: false,
         isLoad: true
       };
-    case actionTypes.ADMIN_FETCH_PAGE_BEGIN:
+    case actionTypes.ADMIN_START_FATCHING_DRINKS:
       return {
         ...state
       };
-    case actionTypes.ADMIN_FETCH_PAGE_SUCCESS:
-      
+    case actionTypes.ADMIN_FATCHING_DRINKS_SUCCESS:
       return {
         ...state,
-        pageContent: action.payload
+        drinksMenu: action.payload
       };
-    case actionTypes.ADMIN_FETCH_PAGE_FAILURE:
+    case actionTypes.ADMIN_FATCHING_DRINKS_FAILURE:
       return {
         ...state,
         error: action.payload.message
       };
+    case actionTypes.ADMIN_START_SENDING_DRINKS_MENU:
+      return {
+        ...state
+      };
+    case actionTypes.ADMIN_SENDING_DRINKS_MENU_SUCCESS:
+      return {
+        ...state
+      };
+    case actionTypes.ADMIN_SENDING_DRINKS_MENU_FAILURE:
+      return {
+        ...state,
+        error:action.payload.message
+      };
+
     default:
       return {
         ...state,

@@ -23,9 +23,10 @@ const Log = ({ signIn, error, isLoad }) => {
   return (
     <div className="LogIn">
       <form onSubmit={handlers.submit} className="LogIn__form">
-        <label htmlFor="">
+        <label htmlFor="login">
           <span>E-mail:</span>
           <input
+            id="login"
             className={error.includes("There is no user") ? "error" : ""}
             type="email"
             name="email"
@@ -37,9 +38,10 @@ const Log = ({ signIn, error, isLoad }) => {
             required
           />
         </label>
-        <label htmlFor="">
+        <label htmlFor="password">
           <span>Password:</span>
           <input
+            id="password"
             type="password"
             className={error.includes("password") ? "error" : ""}
             placeholder={error.includes("password") ? "Niepoprawne hasło" : ""}
@@ -49,7 +51,7 @@ const Log = ({ signIn, error, isLoad }) => {
             required
           />
         </label>
-        <button disabled={!isLoad} className="button LogIn__form--button">
+        <button disabled={!isLoad} className="LogIn__form-button">
           Zaloguj
         </button>
       </form>
