@@ -2,8 +2,8 @@ import React from "react";
 
 const AdminHeader = () => {
   return (
-    <header className="admin-header">
-      <h1 className="admin-header__heading"><span>Panel</span> administratora</h1>
+    <header className="header">
+      <h1 className="header__logo"><span>Admin</span> panel</h1>
     </header>
   );
 };

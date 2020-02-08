@@ -17,6 +17,7 @@
   }
 }
 .menu {
+  padding: 1rem 2rem;
   &__button--back{
     @include button
   }

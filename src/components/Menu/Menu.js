@@ -5,7 +5,7 @@ import { useRouteMatch } from "react-router-dom";
 import { SwitchMenuNav } from "./SwitchMenuNav";
 import Loader from "../Loader";
 import "./styles.scss";
-import PropTypes from "prop-types";
+
 
 const Menu = ({ pizza, drinks, isLoad, fetchMenu }) => {
   const { url } = useRouteMatch();

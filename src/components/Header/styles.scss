@@ -33,26 +33,15 @@
   }
 }
 
-.menu-header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(
+.header {
+    background-image: linear-gradient(
     to right top,
     $background-color-gradient-darck,
     $background-color-gradient-light
   );
   &__logo {
     @include logo;
-    font-size: 5rem;
-    padding: 1rem 0;
   }
 }
 
-.admin-header {
-  @extend .menu-header;
-  &__heading{
-    @extend .menu-header__logo
-  }
-}
+

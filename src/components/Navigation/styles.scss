@@ -9,7 +9,7 @@
     z-index: 1500;
     opacity: 0;
     transform: translateX(-10%);
-    transition: 0.3s;
+    transition: 0.3s .3s;
     pointer-events: none;
   }
   &__toggle {
@@ -39,7 +39,7 @@
       $background-color-gradient-light
     );
     z-index: 1000;
-    transition: 0.5s ease-in-out;
+    transition: 0.5s .3s ease-in-out;
   }
 
   &__logo {

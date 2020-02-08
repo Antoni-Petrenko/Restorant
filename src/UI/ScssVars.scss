@@ -9,10 +9,8 @@ $background-mask: #000;
 
 @mixin logo {
   color: $text-color-light;
-  font-size: 3rem;
-  span {
-    color: $main-color;
-  }
+  font-size: 5rem;
+  padding: 2rem 3.5rem;
 }
 @mixin centerPosition {
   position: absolute;
