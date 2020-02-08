@@ -10,6 +10,7 @@
     padding: 2rem 0;
     width: 100%;
     transition: 0.3s;
+    text-transform:uppercase;
     &.active {
       background-color: $main-color;
     }

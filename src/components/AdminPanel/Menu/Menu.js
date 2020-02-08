@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import {
-  fetchDrinks,
-  setDrinks
-} from "../../../store/actions/actionAdminPanel";
 import { connect } from "react-redux";
+import { fetchPizzaMenu, setPizza} from "../../../store/actions/actionAdminPanel";
 import MenuItem from "./MenuItem";
 import CreateMenuItem from "./CreateMenuItem";
 
-class DrinksMenu extends Component {
+class Menu extends Component {
   state = {};
   async componentDidMount() {
-    await this.props.fetchDrinksMenu();
-    const newState = { ...this.props.drinks };
+    const url = this.props.match.url;
+    await this.props.fetchMenu(url);
+    const newState = { pizza: { ...this.props.menu } };
     newState.isChanged = false;
     this.setState(newState);
   }
@@ -23,7 +21,7 @@ class DrinksMenu extends Component {
   handleFormSubmit = (menuTitle, id, newItem, e) => {
     e.preventDefault();
     const copyState = { ...this.state };
-    copyState.drinks[menuTitle][id] = newItem;
+    copyState.pizza[menuTitle][id] = newItem;
     this.setState(copyState);
     this.handleTouched();
   };
@@ -32,7 +30,7 @@ class DrinksMenu extends Component {
     e.preventDefault();
     this.handleTouched();
     const copyState = { ...this.state };
-    copyState.drinks[menuTitle].push(newItem);
+    copyState.pizza[menuTitle].push(newItem);
     this.setState(copyState);
     this.handleTouched();
   };
@@ -40,27 +38,27 @@ class DrinksMenu extends Component {
   handleDeleteElement = (menuTitle, id, e) => {
     e.preventDefault();
     const copyState = { ...this.state };
-    copyState.drinks[menuTitle].splice(id, 1);
+    copyState.pizza[menuTitle].splice(id, 1);
     this.setState(copyState);
     this.handleTouched();
   };
 
   handleSendChanges = e => {
     e.preventDefault();
-    this.props.setDrinksMenu(this.state.drinks);
+    const url = this.props.match.url;
+    this.props.setPizzaMenu(this.state.pizza, url);
     this.setState({ isChanged: false });
-    this.props.fetchDrinksMenu();
+    this.props.fetchMenu(url);
   };
-
   render() {
-    const { drinks } = this.state;
-    const menuSection = drinks ? Object.keys(drinks) : [];
+    const { pizza } = this.state;
+    const menuSection = pizza ? Object.keys(pizza) : [];
     return (
       <section className="admin-menu">
         {menuSection.map(menuTitle => (
           <fieldset key={menuTitle}>
             <legend>{menuTitle}</legend>
-            {drinks[menuTitle].map((item, index) => (
+            {pizza[menuTitle].map((item, index) => (
               <MenuItem
                 key={menuTitle + item.name + index}
                 {...item}
@@ -81,7 +79,6 @@ class DrinksMenu extends Component {
             <CreateMenuItem
               handleAddNewItem={this.handleAddNewItem.bind(this, menuTitle)}
             />
-
             <button
               disabled={!this.state.isChanged}
               className="send-menu-button"
@@ -95,12 +92,15 @@ class DrinksMenu extends Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => ({
-  fetchDrinksMenu: () => dispatch(fetchDrinks()),
-  setDrinksMenu: menu => dispatch(setDrinks(menu))
-});
+
 const mapStateToProps = state => ({
-  drinks: state.admin.drinksMenu,
-  isLoad: state.admin.isLoad
+  menu: state.admin.pizzaMenu
 });
-export default connect(mapStateToProps, mapDispatchToProps)(DrinksMenu);
+const mapDispatchToProps = dispatch => ({
+  fetchMenu: url => dispatch(fetchPizzaMenu(url)),
+  setPizzaMenu:(menu,url)=>dispatch(setPizza(menu,url))
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Menu);

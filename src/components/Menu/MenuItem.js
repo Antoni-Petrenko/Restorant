@@ -47,4 +47,3 @@ const MenuItem = ({ title }) => {
 };
 
 export { MenuItem };
-//

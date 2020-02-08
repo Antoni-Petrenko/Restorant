@@ -8,7 +8,7 @@ const CreateMenuItem = ({ handleAddNewItem }) => {
       name: "",
       ing: "",
       enable: true,
-      price: ""
+      price: 0
     }
   };
   const [newItem, setNewItem] = useState(initState);
@@ -17,7 +17,10 @@ const CreateMenuItem = ({ handleAddNewItem }) => {
     const copyItem = { ...newItem };
     if (e.target.type === "checkbox") {
       copyItem.product[e.target.name] = !copyItem.product[e.target.name];
-    } else {
+    }else if (e.target.type === "number"){
+      copyItem.product[e.target.name] = e.target.value*1
+    } 
+     else {
       copyItem.product[e.target.name] = e.target.value;
     }
     setNewItem(copyItem);

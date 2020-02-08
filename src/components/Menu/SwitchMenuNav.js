@@ -27,7 +27,7 @@ const SwitchMenuNav = ({
       </nav>
 
       <Route path={`${url}/${firstProductName}`}>
-        <MenuSection menu={firstProduct} />
+        <MenuSection menu={firstProduct}  />
       </Route>
       <Route path={`${url}/${secProductName}`}>
         <MenuSection menu={secProduct} />

@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import { NavLink, Route, useRouteMatch } from "react-router-dom";
-import { RegularPizzaMenu } from "./RegularPizzaMenu";
-import { GlutenfreePizzaMenu } from "./GlutenfreePizzaMenu";
+import Menu from "./Menu";
 
 const PizzaMenu = () => {
   const { url } = useRouteMatch();
@@ -16,10 +14,10 @@ const PizzaMenu = () => {
           Zwykła pizza
         </NavLink>
       </nav>
-      <Route path={`${url}/glutenfree`} component={GlutenfreePizzaMenu} />
-      <Route path={`${url}/regular`} component={RegularPizzaMenu} />
+      <Route path={`${url}/glutenfree`} component={Menu} />
+      <Route path={`${url}/regular`} component={Menu} />
     </>
   );
 };
 
-export default connect()(PizzaMenu);
+export default PizzaMenu;

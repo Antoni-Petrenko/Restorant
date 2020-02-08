@@ -3,16 +3,15 @@ import { connect } from "react-redux";
 import Log from "../../components/Auth/Log";
 import AdminPanel from "../../components/AdminPanel";
 
-const Admin = ({ isSignIn }) => {
+const Admin = ({ iuserID }) => {
   return (
     <main className="admin-panel">
-      {/* {isSignIn ? <AdminPanel /> : <Log />} */}
-      <AdminPanel/>
+      {iuserID.length ? <AdminPanel /> : <Log />}
     </main>
   );
 };
 
 const mapStateToProps = state => ({
-  isSignIn: state.admin.isSignIn
+  iuserID: state.admin.user
 });
 export default connect(mapStateToProps)(Admin);
