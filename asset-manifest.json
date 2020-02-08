@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/Restorant/static/css/main.a6ffccfc.chunk.css",
-    "main.js": "/Restorant/static/js/main.1457901f.chunk.js",
-    "main.js.map": "/Restorant/static/js/main.1457901f.chunk.js.map",
-    "runtime-main.js": "/Restorant/static/js/runtime-main.ed771122.js",
-    "runtime-main.js.map": "/Restorant/static/js/runtime-main.ed771122.js.map",
-    "static/js/2.0d2e2ebb.chunk.js": "/Restorant/static/js/2.0d2e2ebb.chunk.js",
-    "static/js/2.0d2e2ebb.chunk.js.map": "/Restorant/static/js/2.0d2e2ebb.chunk.js.map",
+    "main.css": "/Restorant/static/css/main.31e89fa8.chunk.css",
+    "main.js": "/Restorant/static/js/main.fae49a7d.chunk.js",
+    "main.js.map": "/Restorant/static/js/main.fae49a7d.chunk.js.map",
+    "runtime-main.js": "/Restorant/static/js/runtime-main.202fa80e.js",
+    "runtime-main.js.map": "/Restorant/static/js/runtime-main.202fa80e.js.map",
+    "static/js/2.73b67057.chunk.js": "/Restorant/static/js/2.73b67057.chunk.js",
+    "static/js/2.73b67057.chunk.js.map": "/Restorant/static/js/2.73b67057.chunk.js.map",
+    "static/css/3.ab20d61a.chunk.css": "/Restorant/static/css/3.ab20d61a.chunk.css",
+    "static/js/3.501a6f62.chunk.js": "/Restorant/static/js/3.501a6f62.chunk.js",
+    "static/js/3.501a6f62.chunk.js.map": "/Restorant/static/js/3.501a6f62.chunk.js.map",
     "index.html": "/Restorant/index.html",
-    "precache-manifest.0e3afbf683da57cce4af2495c2757f69.js": "/Restorant/precache-manifest.0e3afbf683da57cce4af2495c2757f69.js",
+    "precache-manifest.83822cc356f8e8d424e14199f8050ac8.js": "/Restorant/precache-manifest.83822cc356f8e8d424e14199f8050ac8.js",
     "service-worker.js": "/Restorant/service-worker.js",
-    "static/css/main.a6ffccfc.chunk.css.map": "/Restorant/static/css/main.a6ffccfc.chunk.css.map",
-    "static/js/2.0d2e2ebb.chunk.js.LICENSE": "/Restorant/static/js/2.0d2e2ebb.chunk.js.LICENSE",
+    "static/css/3.ab20d61a.chunk.css.map": "/Restorant/static/css/3.ab20d61a.chunk.css.map",
+    "static/css/main.31e89fa8.chunk.css.map": "/Restorant/static/css/main.31e89fa8.chunk.css.map",
+    "static/js/2.73b67057.chunk.js.LICENSE": "/Restorant/static/js/2.73b67057.chunk.js.LICENSE",
     "static/media/styles.scss": "/Restorant/static/media/header1278.811394cd.jpg",
     "static/media/local2.jpg": "/Restorant/static/media/local2.a591aa2a.jpg",
     "static/media/loftSmall.png": "/Restorant/static/media/loftSmall.be5850f7.png",
@@ -21,9 +25,9 @@
     "static/media/zielonomi.png": "/Restorant/static/media/zielonomi.4154c06e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ed771122.js",
-    "static/js/2.0d2e2ebb.chunk.js",
-    "static/css/main.a6ffccfc.chunk.css",
-    "static/js/main.1457901f.chunk.js"
+    "static/js/runtime-main.202fa80e.js",
+    "static/js/2.73b67057.chunk.js",
+    "static/css/main.31e89fa8.chunk.css",
+    "static/js/main.fae49a7d.chunk.js"
   ]
 }
