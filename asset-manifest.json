@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Restorant/static/css/main.31e89fa8.chunk.css",
-    "main.js": "/Restorant/static/js/main.fae49a7d.chunk.js",
-    "main.js.map": "/Restorant/static/js/main.fae49a7d.chunk.js.map",
-    "runtime-main.js": "/Restorant/static/js/runtime-main.202fa80e.js",
-    "runtime-main.js.map": "/Restorant/static/js/runtime-main.202fa80e.js.map",
-    "static/js/2.73b67057.chunk.js": "/Restorant/static/js/2.73b67057.chunk.js",
-    "static/js/2.73b67057.chunk.js.map": "/Restorant/static/js/2.73b67057.chunk.js.map",
-    "static/css/3.ab20d61a.chunk.css": "/Restorant/static/css/3.ab20d61a.chunk.css",
-    "static/js/3.501a6f62.chunk.js": "/Restorant/static/js/3.501a6f62.chunk.js",
-    "static/js/3.501a6f62.chunk.js.map": "/Restorant/static/js/3.501a6f62.chunk.js.map",
+    "main.css": "/Restorant/static/css/main.f4aa6a90.chunk.css",
+    "main.js": "/Restorant/static/js/main.206f11fc.chunk.js",
+    "main.js.map": "/Restorant/static/js/main.206f11fc.chunk.js.map",
+    "runtime-main.js": "/Restorant/static/js/runtime-main.5d2161c0.js",
+    "runtime-main.js.map": "/Restorant/static/js/runtime-main.5d2161c0.js.map",
+    "static/js/2.44ac7878.chunk.js": "/Restorant/static/js/2.44ac7878.chunk.js",
+    "static/js/2.44ac7878.chunk.js.map": "/Restorant/static/js/2.44ac7878.chunk.js.map",
+    "static/css/3.119e4eee.chunk.css": "/Restorant/static/css/3.119e4eee.chunk.css",
+    "static/js/3.32ef78f8.chunk.js": "/Restorant/static/js/3.32ef78f8.chunk.js",
+    "static/js/3.32ef78f8.chunk.js.map": "/Restorant/static/js/3.32ef78f8.chunk.js.map",
     "index.html": "/Restorant/index.html",
-    "precache-manifest.83822cc356f8e8d424e14199f8050ac8.js": "/Restorant/precache-manifest.83822cc356f8e8d424e14199f8050ac8.js",
+    "precache-manifest.00a00f100a48aeee71418d352c1652ea.js": "/Restorant/precache-manifest.00a00f100a48aeee71418d352c1652ea.js",
     "service-worker.js": "/Restorant/service-worker.js",
-    "static/css/3.ab20d61a.chunk.css.map": "/Restorant/static/css/3.ab20d61a.chunk.css.map",
-    "static/css/main.31e89fa8.chunk.css.map": "/Restorant/static/css/main.31e89fa8.chunk.css.map",
-    "static/js/2.73b67057.chunk.js.LICENSE": "/Restorant/static/js/2.73b67057.chunk.js.LICENSE",
+    "static/css/3.119e4eee.chunk.css.map": "/Restorant/static/css/3.119e4eee.chunk.css.map",
+    "static/css/main.f4aa6a90.chunk.css.map": "/Restorant/static/css/main.f4aa6a90.chunk.css.map",
+    "static/js/2.44ac7878.chunk.js.LICENSE": "/Restorant/static/js/2.44ac7878.chunk.js.LICENSE",
     "static/media/styles.scss": "/Restorant/static/media/header1278.811394cd.jpg",
     "static/media/local2.jpg": "/Restorant/static/media/local2.a591aa2a.jpg",
     "static/media/loftSmall.png": "/Restorant/static/media/loftSmall.be5850f7.png",
@@ -25,9 +25,9 @@
     "static/media/zielonomi.png": "/Restorant/static/media/zielonomi.4154c06e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.202fa80e.js",
-    "static/js/2.73b67057.chunk.js",
-    "static/css/main.31e89fa8.chunk.css",
-    "static/js/main.fae49a7d.chunk.js"
+    "static/js/runtime-main.5d2161c0.js",
+    "static/js/2.44ac7878.chunk.js",
+    "static/css/main.f4aa6a90.chunk.css",
+    "static/js/main.206f11fc.chunk.js"
   ]
 }
