@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3a2b5890e2f77333a599c0ef36d92e60",
+    "revision": "8b54219ee9e042f3fbf50a612ad0184b",
     "url": "/Restorant/index.html"
   },
   {
-    "revision": "741d4b89af0157acac0d",
-    "url": "/Restorant/static/css/3.119e4eee.chunk.css"
+    "revision": "cd5acecb4e6b56ecc82d",
+    "url": "/Restorant/static/css/3.dbadd204.chunk.css"
   },
   {
     "revision": "78aa3012b7b69f8bd4ab",
@@ -20,16 +20,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Restorant/static/js/2.44ac7878.chunk.js.LICENSE"
   },
   {
-    "revision": "741d4b89af0157acac0d",
-    "url": "/Restorant/static/js/3.32ef78f8.chunk.js"
+    "revision": "cd5acecb4e6b56ecc82d",
+    "url": "/Restorant/static/js/3.19582441.chunk.js"
   },
   {
     "revision": "78aa3012b7b69f8bd4ab",
     "url": "/Restorant/static/js/main.206f11fc.chunk.js"
   },
   {
-    "revision": "516fa7211737c66d88d7",
-    "url": "/Restorant/static/js/runtime-main.5d2161c0.js"
+    "revision": "d6c6410959ec79cafaa9",
+    "url": "/Restorant/static/js/runtime-main.acc392a6.js"
   },
   {
     "revision": "811394cd0dfda2b382d1bd263ef10db1",
