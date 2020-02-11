@@ -38,6 +38,10 @@ class DrinksMenu extends Component {
 
   handleAddNewItem = (menuTitle, newItem, e) => {
     e.preventDefault();
+    newItem.id = `${this.state.drinks[menuTitle].length + 1}${menuTitle}${
+      newItem.name
+    }`;
+
     this.setState(prevState => {
       const id = `${prevState.drinks[menuTitle].length + 1}${menuTitle}${
         newItem.name
@@ -74,6 +78,7 @@ class DrinksMenu extends Component {
   render() {
     const { drinks } = this.state;
     const menuSection = drinks ? Object.keys(drinks) : [];
+    console.log(this.state);
     return (
       <section className="admin-menu">
         {menuSection.map(menuTitle => (

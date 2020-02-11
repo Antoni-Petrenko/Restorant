@@ -46,7 +46,7 @@
   &__item {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1rem 0;
 
     &--content {
       h3 {
@@ -63,9 +63,14 @@
       display: flex;
       flex-direction: column;
       min-width: 10rem;
-      text-align: center;
+      text-align: right;
       span {
       }
     }
+  }
+}
+@media only screen and (min-width: 768px)  {
+  .menu__item--price {
+    text-align: center;
   }
 }
