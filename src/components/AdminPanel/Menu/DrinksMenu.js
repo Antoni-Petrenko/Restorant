@@ -11,38 +11,57 @@ class DrinksMenu extends Component {
   state = {};
   async componentDidMount() {
     await this.props.fetchDrinksMenu();
-    const newState = { ...this.props.drinks };
-    newState.isChanged = false;
-    this.setState(newState);
+    this.setState((prevState, props) => ({
+      ...props.drinks,
+      isChanged: false
+    }));
   }
 
   handleTouched = () => {
     this.setState({ isChanged: true });
   };
 
-  handleFormSubmit = (menuTitle, id, newItem, e) => {
+  handleFormSubmit = (menuTitle, newItem, e) => {
     e.preventDefault();
-    const copyState = { ...this.state };
-    copyState.drinks[menuTitle][id] = newItem;
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const copyState = { ...prevState.drinks };
+      copyState[menuTitle].find((item, index, arr) => {
+        if (item.id === newItem.id) {
+          arr[index] = newItem;
+          return true;
+        }
+        return false;
+      });
+      return copyState;
+    }, this.handleTouched);
   };
 
   handleAddNewItem = (menuTitle, newItem, e) => {
     e.preventDefault();
-    this.handleTouched();
-    const copyState = { ...this.state };
-    copyState.drinks[menuTitle].push(newItem);
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const id = `${prevState.drinks[menuTitle].length + 1}${menuTitle}${
+        newItem.name
+      }`;
+      newItem.id = id;
+      const copyState = { ...prevState.drinks };
+      copyState[menuTitle].push(newItem);
+      return { drinks: copyState };
+    }, this.handleTouched);
   };
 
   handleDeleteElement = (menuTitle, id, e) => {
     e.preventDefault();
-    const copyState = { ...this.state };
-    copyState.drinks[menuTitle].splice(id, 1);
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const copyState = { ...prevState };
+      copyState.drinks[menuTitle].find((item, index, arr) => {
+        if (item.id === id) {
+          arr.splice(index, 1);
+          return true;
+        }
+        return false;
+      });
+      return copyState;
+    }, this.handleTouched);
   };
 
   handleSendChanges = e => {
@@ -62,7 +81,7 @@ class DrinksMenu extends Component {
             <legend>{menuTitle}</legend>
             {drinks[menuTitle].map((item, index) => (
               <MenuItem
-                key={menuTitle + item.name + index}
+                key={item.id}
                 {...item}
                 handleFormSubmit={this.handleFormSubmit.bind(
                   this,
@@ -71,8 +90,7 @@ class DrinksMenu extends Component {
                 )}
                 handleDeletElement={this.handleDeleteElement.bind(
                   this,
-                  menuTitle,
-                  index
+                  menuTitle
                 )}
                 handleTouched={this.handleTouched}
               />

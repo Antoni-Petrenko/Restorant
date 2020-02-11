@@ -15,6 +15,7 @@ class App extends Component {
   componentDidMount() {
     this.props.onLoad();
   }
+
   render() {
     return this.props.isLoad ? (
       <div className="wrapper">
@@ -27,7 +28,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/menu" component={MenuPage} />
-          <Suspense fallback={<Loader/>}>
+          <Suspense fallback={<Loader />}>
             <Route path="/admin-panel" component={Admin} />
           </Suspense>
           <Route component={Page404} />

@@ -7,21 +7,25 @@ const MenuItem = ({
   ing,
   enable,
   price,
+  id,
   handleFormSubmit,
-  handleDeletElement,
-  handleTouched
+  handleDeletElement
 }) => {
   const [newItem, setNewItem] = useState({
     status: { isSaved: true },
-    product: { name, ing, enable, price }
+    product: { enable, id, ing, name, price }
   });
 
   const handleInput = e => {
     const copyItem = { ...newItem };
     copyItem.status.isSaved = false;
-    e.target.type === "checkbox"
-      ? (copyItem.product[e.target.name] = !copyItem.product[e.target.name])
-      : (copyItem.product[e.target.name] = e.target.value);
+    if (e.target.type === "checkbox") {
+      copyItem.product[e.target.name] = !copyItem.product[e.target.name];
+    } else if (e.target.type === "number") {
+      copyItem.product[e.target.name] = +e.target.value;
+    } else {
+      copyItem.product[e.target.name] = e.target.value;
+    }
     setNewItem(copyItem);
   };
 
@@ -31,8 +35,6 @@ const MenuItem = ({
     setNewItem(copyStatus);
     handleFormSubmit(newItem.product, e);
   };
-
-  const randId = Math.random();
 
   return (
     <form className="admin-menu__item" onSubmit={handleSaveChange}>
@@ -49,11 +51,11 @@ const MenuItem = ({
         name="ing"
         value={newItem.product.ing}
       />
-      <label className="enable" htmlFor={randId}>
+      <label className="enable" htmlFor={newItem.product.id}>
         {newItem.product.enable ? <MdVisibility /> : <MdVisibilityOff />}
       </label>
       <input
-        id={randId}
+        id={newItem.product.id}
         onChange={handleInput}
         name="enable"
         type="checkbox"
@@ -73,7 +75,7 @@ const MenuItem = ({
       >
         Aktualizuj
       </button>
-      <a href="/" className="admin-menu__button" onClick={handleDeletElement}>
+      <a href="/" className="admin-menu__button" onClick={handleDeletElement.bind(null,newItem.product.id)}>
         <FaTrashAlt />
       </a>
       <span className="admin-menu__isUpload">

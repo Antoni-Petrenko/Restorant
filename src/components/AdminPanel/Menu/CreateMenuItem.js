@@ -8,7 +8,7 @@ const CreateMenuItem = ({ handleAddNewItem }) => {
       name: "",
       ing: "",
       enable: true,
-      price: 0
+      price: ''
     }
   };
   const [newItem, setNewItem] = useState(initState);

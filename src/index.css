@@ -50,6 +50,15 @@ h4,
 a {
   font-family: "Montserrat", sans-serif;
 }
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #ffb932;
+}
+
 @media only screen and (max-width: 320px) {
   html {
     font-size: 45%;

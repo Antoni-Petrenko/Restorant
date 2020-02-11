@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Question1 = () => {
   return (
-    <div className="qestion">
-      <Link className="qestion__button" to="/menu/glutenfree/pizza">
+    <div className="question">
+      <Link className="question__button" to="/menu/glutenfree/pizza">
         Gluten free
       </Link>
-      <Link className="qestion__button" to="/menu/regular/pizza">
+      <Link className="question__button" to="/menu/regular/pizza">
         Zwykła
       </Link>
-      <Link className="qestion__button" to="/">
+      <Link className="question__button" to="/">
         Wróć
       </Link>
     </div>

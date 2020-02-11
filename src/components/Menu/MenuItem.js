@@ -31,17 +31,20 @@ const MenuItem = ({ title }) => {
         </li>
       ));
   };
+  
   const menuTitlesList = Object.keys(title);
 
   return (
     <>
-      {menuTitlesList.map(key => (
-        <li key={key}>
-          <h2 className="menu__title">{key}</h2>
-          {pizzaSize()}
-          <ol>{renderListOfProduct(title, key)}</ol>
-        </li>
-      ))}
+      {menuTitlesList.map(key =>
+        title[key].length && title[key].filter(el => el.enable).length ? (
+          <li key={key}>
+            <h2 className="menu__title">{key}</h2>
+            {pizzaSize()}
+            <ol>{renderListOfProduct(title, key)}</ol>
+          </li>
+        ) : null
+      )}
     </>
   );
 };

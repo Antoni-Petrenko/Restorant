@@ -12,7 +12,7 @@ const MenuPage = () => {
           <CSSTransition
             in={match != null}
             timeout={300}
-            classNames="qestion"
+            classNames="question"
             unmountOnExit
           >
             <Question1 />

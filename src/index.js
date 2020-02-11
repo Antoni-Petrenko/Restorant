@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Browser } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./store/reducers/rootReducer";
@@ -20,9 +20,9 @@ const store = createStore(
 
 const app = (
   <Provider store={store}>
-    <Browser basename={process.env.PUBLIC_URL}>
+    <Router>
       <App />
-    </Browser>
+    </Router>
   </Provider>
 );
 ReactDOM.render(app, document.getElementById("root"));

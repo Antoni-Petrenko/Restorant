@@ -1,46 +1,72 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchPizzaMenu, setPizza} from "../../../store/actions/actionAdminPanel";
+import {
+  fetchPizzaMenu,
+  setPizza
+} from "../../../store/actions/actionAdminPanel";
 import MenuItem from "./MenuItem";
 import CreateMenuItem from "./CreateMenuItem";
+import { SearchBar } from "./SearchBar";
 
 class Menu extends Component {
-  state = {};
+  state = {
+    filterWord: ""
+  };
+
   async componentDidMount() {
     const url = this.props.match.url;
     await this.props.fetchMenu(url);
-    const newState = { pizza: { ...this.props.menu } };
-    newState.isChanged = false;
-    this.setState(newState);
+    this.setState((prevState, props) => ({
+      pizza: { ...props.menu },
+      ...prevState
+    }));
   }
 
   handleTouched = () => {
     this.setState({ isChanged: true });
   };
 
-  handleFormSubmit = (menuTitle, id, newItem, e) => {
+  handleFormSubmit = (menuTitle, newItem, e) => {
     e.preventDefault();
-    const copyState = { ...this.state };
-    copyState.pizza[menuTitle][id] = newItem;
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const copyState = { ...prevState.pizza };
+      copyState[menuTitle].find((item, index, arr) => {
+        if (item.id === newItem.id) {
+          arr[index] = newItem;
+          return true;
+        }
+        return false;
+      });
+      return copyState;
+    }, this.handleTouched);
   };
 
   handleAddNewItem = (menuTitle, newItem, e) => {
     e.preventDefault();
-    this.handleTouched();
-    const copyState = { ...this.state };
-    copyState.pizza[menuTitle].push(newItem);
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const id = `${prevState.pizza[menuTitle].length + 1}${menuTitle}${
+        newItem.name
+      }`;
+      newItem.id = id;
+      const copyState = { ...prevState.pizza };
+      copyState[menuTitle].push(newItem);
+      return copyState;
+    }, this.handleTouched);
   };
 
   handleDeleteElement = (menuTitle, id, e) => {
     e.preventDefault();
-    const copyState = { ...this.state };
-    copyState.pizza[menuTitle].splice(id, 1);
-    this.setState(copyState);
-    this.handleTouched();
+    this.setState(prevState => {
+      const copyState = { ...prevState.pizza };
+      copyState[menuTitle].find((item, index, arr) => {
+        if (item.id === id) {
+          arr.splice(index, 1);
+          return true;
+        }
+        return false;
+      });
+      return copyState;
+    }, this.handleTouched);
   };
 
   handleSendChanges = e => {
@@ -50,31 +76,34 @@ class Menu extends Component {
     this.setState({ isChanged: false });
     this.props.fetchMenu(url);
   };
+  handleSearchBar = e => {
+    e.preventDefault();
+    this.setState({ filterWord: e.target.value });
+  };
+
   render() {
     const { pizza } = this.state;
     const menuSection = pizza ? Object.keys(pizza) : [];
     return (
       <section className="admin-menu">
+        <SearchBar filterWord={this.state.filterWord} handleSearchBar={this.handleSearchBar} />
         {menuSection.map(menuTitle => (
           <fieldset key={menuTitle}>
             <legend>{menuTitle}</legend>
-            {pizza[menuTitle].map((item, index) => (
-              <MenuItem
-                key={menuTitle + item.name + index}
-                {...item}
-                handleFormSubmit={this.handleFormSubmit.bind(
-                  this,
-                  menuTitle,
-                  index
-                )}
-                handleDeletElement={this.handleDeleteElement.bind(
-                  this,
-                  menuTitle,
-                  index
-                )}
-                handleTouched={this.handleTouched}
-              />
-            ))}
+            {pizza[menuTitle]
+              .filter(item => item.ing.includes(this.state.filterWord))
+              .map((item, index) => (
+                <MenuItem
+                  key={item.id}
+                  {...item}
+                  handleFormSubmit={this.handleFormSubmit.bind(this, menuTitle)}
+                  handleDeletElement={this.handleDeleteElement.bind(
+                    this,
+                    menuTitle
+                  )}
+                  handleTouched={this.handleTouched}
+                />
+              ))}
 
             <CreateMenuItem
               handleAddNewItem={this.handleAddNewItem.bind(this, menuTitle)}
@@ -98,9 +127,6 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
   fetchMenu: url => dispatch(fetchPizzaMenu(url)),
-  setPizzaMenu:(menu,url)=>dispatch(setPizza(menu,url))
+  setPizzaMenu: (menu, url) => dispatch(setPizza(menu, url))
 });
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

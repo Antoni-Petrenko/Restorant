@@ -16,8 +16,8 @@ const MenuSection = () => {
           altName="pizza polska"
           title="Menu Klasyczne"
           links={{
-            gfree: "/menu/glutenfree/classic",
-            classic: "/menu/regular/classic"
+            gfree: "/menu/glutenfree/pizza",
+            classic: "/menu/regular/pizza"
           }}
         />
         <MenuCard
@@ -25,8 +25,8 @@ const MenuSection = () => {
           altName="pizza spinachi"
           title="Menu Wegańskie"
           links={{
-            gfree: "/menu/glutenfree/vegan",
-            classic: "/menu/regular/vegan"
+            gfree: "/menu/glutenfree/pizza",
+            classic: "/menu/regular/pizza"
           }}
         />
         <MenuCard

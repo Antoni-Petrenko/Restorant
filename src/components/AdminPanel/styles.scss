@@ -26,11 +26,13 @@
   }
 }
 .message {
+  font-family: "Montserrat", sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
   width: 100%;
   text-align: center;
   align-self: center;
+  @include centerPosition;
 }
 .admin-menu {
   &__button {
@@ -55,7 +57,7 @@
   &__item {
     width: 100%;
     display: grid;
-     grid-template-columns: 5fr 10fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 5fr 10fr 1fr 1fr 1fr 1fr 1fr;
     margin-top: 1rem;
     &__isUpload {
       font-size: 2rem;
@@ -113,4 +115,12 @@
       }
     }
   }
+}
+.search-bar {
+  border: none;
+  border-bottom: 2px solid #ffb932;
+  font-size: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 0 1rem;
 }

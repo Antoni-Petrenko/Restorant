@@ -10,7 +10,7 @@
     padding: 2rem 0;
     width: 100%;
     transition: 0.3s;
-    text-transform:uppercase;
+    text-transform: uppercase;
     &.active {
       background-color: $main-color;
     }
@@ -18,8 +18,16 @@
 }
 .menu {
   padding: 1rem 2rem;
-  &__button--back{
-    @include button
+  &-glutenfree__message {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: green;
+    font-weight: bold;
+  }
+  &__button--back {
+    @include button;
   }
   &__size {
     font-size: 2rem;
@@ -57,11 +65,7 @@
       min-width: 10rem;
       text-align: center;
       span {
-        
       }
     }
   }
 }
-
-
-
