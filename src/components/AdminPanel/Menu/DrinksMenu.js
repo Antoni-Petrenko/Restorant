@@ -78,7 +78,6 @@ class DrinksMenu extends Component {
   render() {
     const { drinks } = this.state;
     const menuSection = drinks ? Object.keys(drinks) : [];
-    console.log(this.state);
     return (
       <section className="admin-menu">
         {menuSection.map(menuTitle => (
@@ -88,11 +87,7 @@ class DrinksMenu extends Component {
               <MenuItem
                 key={item.id}
                 {...item}
-                handleFormSubmit={this.handleFormSubmit.bind(
-                  this,
-                  menuTitle,
-                  index
-                )}
+                handleFormSubmit={this.handleFormSubmit.bind(this, menuTitle)}
                 handleDeletElement={this.handleDeleteElement.bind(
                   this,
                   menuTitle
